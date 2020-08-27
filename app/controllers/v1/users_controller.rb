@@ -21,12 +21,12 @@ module V1
     end
 
     def destroy
-      @post.destroy
+      @user.destroy
       render json: { status: 'SUCCESS', message: 'Deleted the user', data: @user }
     end
 
     def update
-      if @user.update(post_params)
+      if @user.update(user_params)
         render json: { status: 'SUCCESS', message: 'Updated the user', data: @user }
       else
         render json: { status: 'SUCCESS', message: 'Not updated', data: @user.errors }
